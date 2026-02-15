@@ -1,439 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pooja Saini – Marriage Profile</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pooja Saini – Marriage Biodata</title>
 
-  <style>
-    :root {
-      --bg-start:    #f0e6e0;
-      --bg-end:      #e0d0c2;
-      --primary:      #6b1c23;      /* deeper burgundy/maroon */
-      --primary-dark: #4a1318;
-      --accent:       #b8860b;      /* darker antique gold */
-      --text:         #2c1a0f;
-      --text-light:   #4a3428;
-      --card-bg:      #f8f1ea;
-      --border:       rgba(139, 69, 19, 0.18);
-      --shadow:       0 12px 44px rgba(107, 28, 35, 0.16);
-      --glass:        rgba(248, 241, 234, 0.84);
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+:root{
+  --bg:#fdfaf7;
+  --surface:#fffaf5;
+  --primary:#9f1239;
+  --primary-dark:#881337;
+  --accent:#d4a373;
+  --text:#2d1b12;
+  --text-light:#6b4a3e;
+  --border:#e6d5c2;
+  --shadow:0 8px 32px rgba(159,18,57,0.12);
+  --radius:16px;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, var(--bg-start), var(--bg-end));
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.68;
-    }
+*{margin:0;padding:0;box-sizing:border-box}
 
-    .container {
-      max-width: 1180px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
 
-    header {
-      text-align: center;
-      padding: 4.5rem 2.5rem 4rem;
-      background: var(--glass);
-      backdrop-filter: blur(16px);
-      border-radius: 2.2rem;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      margin-bottom: 4rem;
-    }
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:0 20px 120px;
+}
 
-    .profile-wrapper {
-      width: 220px;
-      height: 220px;
-      margin: 0 auto 2.2rem;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 18px 52px rgba(107,28,35,0.22);
-      transition: all 0.55s ease;
-    }
+header{
+  padding:80px 0 60px;
+  text-align:center;
+}
 
-    .profile-wrapper:hover {
-      transform: scale(1.08) translateY(-6px);
-      box-shadow: 0 26px 68px rgba(107,28,35,0.32);
-    }
+.avatar{
+  width:220px;
+  height:220px;
+  object-fit:cover;
+  border-radius:50%;
+  border:8px solid white;
+  box-shadow:var(--shadow);
+  margin-bottom:32px;
+  cursor:pointer;
+  transition:0.4s ease;
+}
 
-    .profile-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: pointer;
-    }
+.avatar:hover{transform:scale(1.05)}
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 7.2vw, 4.6rem);
-      color: var(--primary);
-      margin-bottom: 0.8rem;
-      letter-spacing: -0.6px;
-    }
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,8vw,4.5rem);
+  color:var(--primary);
+}
 
-    .tagline {
-      font-size: clamp(1.15rem, 3.6vw, 1.45rem);
-      color: var(--text-light);
-      font-weight: 500;
-    }
+.tagline{
+  font-size:1.3rem;
+  color:var(--text-light);
+  margin-top:10px;
+}
 
-    .tabs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.2rem;
-      margin-bottom: 4rem;
-    }
+.content{
+  background:white;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  padding:40px 30px;
+  min-height:450px;
+}
 
-    .tab-btn {
-      padding: 1.05rem 2.4rem;
-      background: var(--glass);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--border);
-      border-radius: 3.2rem;
-      cursor: pointer;
-      font-weight: 600;
-      color: var(--primary);
-      transition: all 0.5s ease;
-      font-size: 1.05rem;
-    }
+.section{display:none}
+.section.active{
+  display:block;
+  animation:fadeIn 0.4s ease;
+}
 
-    .tab-btn.active,
-    .tab-btn:hover {
-      background: var(--primary);
-      color: white;
-      transform: translateY(-8px);
-      box-shadow: 0 18px 52px rgba(107,28,35,0.32);
-    }
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
 
-    .tab-content {
-      display: none;
-      opacity: 0;
-      transform: translateY(3rem);
-      transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
-    }
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  text-align:center;
+  color:var(--primary);
+  margin-bottom:30px;
+}
 
-    .tab-content.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
+.grid{
+  display:grid;
+  gap:22px;
+}
 
-    section {
-      background: var(--card-bg);
-      border-radius: 2.2rem;
-      padding: 3rem 2.5rem;
-      margin-bottom: 4rem;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
+@media(min-width:768px){
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .avatar{width:260px;height:260px}
+}
 
-    h2 {
-      font-family: 'Playfair Display', serif;
-      color: var(--primary);
-      font-size: clamp(2.2rem, 5.8vw, 3rem);
-      text-align: center;
-      margin-bottom: 2.4rem;
-      position: relative;
-    }
+.detail-item{
+  padding:22px;
+  background:var(--surface);
+  border-radius:12px;
+  border:1px solid #f0e6e0;
+}
 
-    h2::after {
-      content: '';
-      width: 8rem;
-      height: 4px;
-      background: var(--accent);
-      position: absolute;
-      bottom: -1.2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 2px;
-    }
+.detail-label{
+  color:var(--text-light);
+  font-weight:500;
+  margin-bottom:6px;
+}
 
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem;
-      text-align: center;
-    }
+.detail-value{
+  font-weight:500;
+  font-size:1.05rem;
+}
 
-    .info-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 1.6rem;
-      border: 1px solid var(--border);
-      transition: all 0.5s ease;
-    }
+.hobbies{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  justify-content:center;
+  margin-top:35px;
+}
 
-    .info-card:hover {
-      transform: translateY(-14px);
-      box-shadow: 0 22px 64px rgba(107,28,35,0.22);
-    }
+.hobby{
+  padding:10px 22px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  font-weight:500;
+}
 
-    .info-card strong {
-      display: block;
-      font-size: 1.2rem;
-      margin-bottom: 0.9rem;
-      color: var(--primary);
-    }
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:white;
+  border-top:1px solid var(--border);
+  padding:14px;
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  z-index:100;
+}
 
-    .expectation {
-      margin: 4rem auto;
-      max-width: 820px;
-      padding: 2.8rem;
-      background: white;
-      border-radius: 1.8rem;
-      border: 1px solid var(--border);
-      font-size: clamp(1.2rem, 3.4vw, 1.4rem);
-      font-style: italic;
-      color: var(--text-light);
-      text-align: center;
-      box-shadow: 0 8px 32px rgba(107,28,35,0.1);
-    }
+.nav-btn{
+  padding:12px 22px;
+  border-radius:999px;
+  border:2px solid var(--primary);
+  background:white;
+  color:var(--primary);
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.4rem;
-      margin-top: 3rem;
-    }
+.nav-btn.active{
+  background:var(--primary);
+  color:white;
+}
 
-    .contact-card {
-      background: white;
-      padding: 3rem 2.5rem;
-      border-radius: 1.8rem;
-      border: 1px solid var(--border);
-      text-align: center;
-      transition: all 0.5s ease;
-    }
+.nav-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(159,18,57,0.25);
+}
 
-    .contact-card:hover {
-      transform: translateY(-14px);
-      box-shadow: 0 26px 72px rgba(107,28,35,0.24);
-    }
+/* CONTACT RESPONSIVE */
 
-    .phone-link {
-      display: block;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 1.5rem 0;
-      text-decoration: none;
-    }
+.contact-grid{
+  display:grid;
+  gap:30px;
+}
 
-    .phone-link:hover {
-      color: var(--accent);
-    }
+@media(min-width:768px){
+  .contact-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
 
-    .copy-btn {
-      padding: 1.1rem 2.4rem;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 3.2rem;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1.08rem;
-      transition: all 0.4s;
-    }
+.contact-card{
+  text-align:center;
+  padding:35px 20px;
+  background:var(--surface);
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+}
 
-    .copy-btn:hover {
-      background: var(--primary-dark);
-      transform: scale(1.08);
-    }
+.contact-name{
+  font-weight:600;
+  margin-bottom:15px;
+}
 
-    .copied::after {
-      content: "Copied ✓";
-      position: absolute;
-      top: -3.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--accent);
-      color: #2d1b12;
-      padding: 0.7rem 1.5rem;
-      border-radius: 3.2rem;
-      font-size: 1rem;
-      animation: fadeOutUp 3s forwards;
-    }
+.phone{
+  display:block;
+  width:100%;
+  max-width:320px;
+  margin:15px auto;
+  font-size:clamp(1.3rem,5vw,1.9rem);
+  font-weight:700;
+  padding:14px 20px;
+  border-radius:999px;
+  border:2px solid var(--primary);
+  color:var(--primary);
+  background:white;
+  text-decoration:none;
+  text-align:center;
+  transition:0.3s;
+}
 
-    @keyframes fadeOutUp {
-      to { opacity: 0; transform: translateX(-50%) translateY(-30px); }
-    }
+.phone:hover{
+  background:var(--primary);
+  color:white;
+}
 
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(45,27,18,0.92);
-      backdrop-filter: blur(12px);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-    }
+.copy-btn{
+  padding:12px 30px;
+  background:var(--primary);
+  color:white;
+  border:none;
+  border-radius:999px;
+  cursor:pointer;
+  transition:0.3s;
+}
 
-    .modal img {
-      max-width: 96%;
-      max-height: 90vh;
-      border-radius: 1.5rem;
-      box-shadow: 0 0 100px rgba(0,0,0,0.78);
-      transform: scale(0.78);
-      transition: transform 0.7s ease;
-    }
+.copy-btn:hover{
+  background:var(--primary-dark);
+}
 
-    .modal.active img {
-      transform: scale(1);
-    }
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
 
-    /* Responsive */
-    @media (min-width: 480px)  { .profile-wrapper { width: 240px; height: 240px; } }
-    @media (min-width: 768px)  {
-      .container { padding: 0 3.5rem; }
-      .profile-wrapper { width: 300px; height: 300px; }
-      .info-grid { grid-template-columns: repeat(2, 1fr); }
-      .contact-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (min-width: 1024px) {
-      .profile-wrapper { width: 340px; height: 340px; }
-      h1 { font-size: 5rem; }
-      .info-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-  </style>
+.modal img{
+  max-width:95%;
+  max-height:90vh;
+  border-radius:16px;
+}
+
+</style>
 </head>
 <body>
 
 <div class="container">
-  <header>
-    <div class="profile-wrapper">
-      <img src="Pooja_Saini.jpeg" alt="Pooja Saini" class="profile-photo" id="profilePhoto">
-    </div>
-    <h1>Pooja Saini</h1>
-    <p class="tagline">Music & Painting Enthusiast</p>
-  </header>
 
-  <div class="tabs">
-    <button class="tab-btn active" data-tab="personal">Personal</button>
-    <button class="tab-btn" data-tab="education">Education</button>
-    <button class="tab-btn" data-tab="family">Family & Lifestyle</button>
-    <button class="tab-btn" data-tab="contact">Contact</button>
-  </div>
+<header>
+<img src="Pooja_Saini.jpeg" class="avatar" id="avatar">
+<h1>Pooja Saini</h1>
+<div class="tagline">Seeking a compatible life partner</div>
+</header>
 
-  <!-- PERSONAL -->
-  <div class="tab-content active" id="personal">
-    <section>
-      <h2>Personal Details</h2>
-      <div class="info-grid">
-        <div class="info-card"><strong>Date of Birth</strong>3 May 1999</div>
-        <div class="info-card"><strong>Height / Weight</strong>5'4" • 55 kg</div>
-        <div class="info-card"><strong>Blood Group</strong>O+</div>
-        <div class="info-card"><strong>Gotra</strong>Self: Pawar <br>• Mother: Niwaiwal <br>• Nani: Balaan <br>• Dadi: Singodiya</div>
-      </div>
-    </section>
-  </div>
+<div class="content">
 
-  <!-- EDUCATION -->
-  <div class="tab-content" id="education">
-    <section>
-      <h2>Education & Career</h2>
-      <div class="info-grid">
-        <div class="info-card"><strong>M.Sc</strong>Smt. Indramani Mandelia College, Pilani</div>
-        <div class="info-card"><strong>D.Pharma</strong>SS College, Chirawa</div>
-        <div class="info-card"><strong>B.Sc</strong>Tagore College, Pilani</div>
-      </div>
-    </section>
-  </div>
-
-  <!-- FAMILY & LIFESTYLE -->
-  <div class="tab-content" id="family">
-    <section>
-      <h2>Family & Lifestyle</h2>
-      <div class="info-grid">
-        <div class="info-card"><strong>Father</strong>Lalaram Saini – Cook at BITS Pilani</div>
-        <div class="info-card"><strong>Mother</strong>Munni Devi – Homemaker</div>
-        <div class="info-card"><strong>Siblings</strong>3 Sisters & 1 Brother<br>(2 elder sisters married)</div>
-        <div class="info-card"><strong>Family Type</strong>Nuclear • Pilani, Rajasthan</div>
-      </div>
-
-      <div style="margin: 4rem 0; text-align:center;">
-        <strong style="font-size:1.5rem; color:var(--primary); display:block; margin-bottom:1.5rem;">Interests</strong>
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
-          <!-- <span style="background:white; padding:1.2rem 2.5rem; border-radius:3.2rem; color:var(--text-light); border:1px solid var(--border);">Pure Vegetarian</span> -->
-          <span style="background:white; padding:1.2rem 2.5rem; border-radius:3.2rem; color:var(--text-light); border:1px solid var(--border);">Music</span>
-          <span style="background:white; padding:1.2rem 2.5rem; border-radius:3.2rem; color:var(--text-light); border:1px solid var(--border);">Painting</span>
-        </div>
-      </div>
-
-      <!-- <div class="expectation">
-        Seeking a kind, respectful, emotionally mature and professionally stable life partner who values family traditions and dreams of a warm, loving future together.
-      </div> -->
-    </section>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="tab-content" id="contact">
-    <section>
-      <h2>Contact for Inquiries</h2>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Kuldeep Saini (Jiju)</h3>
-          <a href="tel:+919050665678" class="phone-link">9050665678</a>
-          <button class="copy-btn" data-phone="9050665678">Copy Number</button>
-        </div>
-        <div class="contact-card">
-          <h3>Ramavtar Saini (Chachu)</h3>
-          <a href="tel:+919887493066" class="phone-link">9887493066</a>
-          <button class="copy-btn" data-phone="9887493066">Copy Number</button>
-        </div>
-      </div>
-      <p style="text-align:center; margin-top:2.5rem; font-size:1.1rem; color:var(--text-light);">
-        Tap number to call directly (mobile) or copy to clipboard.
-      </p>
-    </section>
-  </div>
+<div id="personal" class="section active">
+<h2 class="section-title">Personal Details</h2>
+<div class="grid grid-2">
+<div class="detail-item"><div class="detail-label">Date of Birth</div><div class="detail-value">3 May 1999</div></div>
+<div class="detail-item"><div class="detail-label">Height / Weight</div><div class="detail-value">5'4\" • 55 kg</div></div>
+<div class="detail-item"><div class="detail-label">Blood Group</div><div class="detail-value">O+</div></div>
+<div class="detail-item"><div class="detail-label">Gotra</div><div class="detail-value">Self: Pawar<br>Mother: Niwaiwal<br>Nani: Balaan<br>Dadi: Singodiya</div></div>
+</div>
 </div>
 
-<!-- Photo Modal -->
-<div class="modal" id="modal" onclick="this.style.display='none'">
-  <img id="modalImg" src="" alt="Pooja Saini">
+<div id="education" class="section">
+<h2 class="section-title">Education & Career</h2>
+<div class="grid grid-3">
+<div class="detail-item"><div class="detail-label">M.Sc</div><div class="detail-value">Smt. Indramani Mandelia College, Pilani</div></div>
+<div class="detail-item"><div class="detail-label">D.Pharma</div><div class="detail-value">SS College, Chirawa</div></div>
+<div class="detail-item"><div class="detail-label">B.Sc</div><div class="detail-value">Tagore College, Pilani</div></div>
+</div>
+</div>
+
+<div id="family" class="section">
+<h2 class="section-title">Family & Interests</h2>
+<div class="grid grid-2">
+<div class="detail-item"><div class="detail-label">Father</div><div class="detail-value">Lalaram Saini – Cook at BITS Pilani</div></div>
+<div class="detail-item"><div class="detail-label">Mother</div><div class="detail-value">Munni Devi – Homemaker</div></div>
+<div class="detail-item"><div class="detail-label">Siblings</div><div class="detail-value">3 Sisters & 1 Brother<br>(2 elder sisters married)</div></div>
+<div class="detail-item"><div class="detail-label">Location</div><div class="detail-value">Pilani, Rajasthan</div></div>
+</div>
+
+<div class="hobbies">
+<div class="hobby">Pure Vegetarian</div>
+<div class="hobby">Music</div>
+<div class="hobby">Painting</div>
+</div>
+</div>
+
+<div id="contact" class="section">
+<h2 class="section-title">Contact for Alliance</h2>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<div class="contact-name">Kuldeep Saini (Jiju)</div>
+<a href="tel:+919050665678" class="phone">9050665678</a>
+<button class="copy-btn" data-clip="9050665678">Copy number</button>
+</div>
+
+<div class="contact-card">
+<div class="contact-name">Ramavtar Saini (Chachu)</div>
+<a href="tel:+919887493066" class="phone">9887493066</a>
+<button class="copy-btn" data-clip="9887493066">Copy number</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="bottom-nav">
+<button class="nav-btn active" data-section="personal">Personal</button>
+<button class="nav-btn" data-section="education">Education</button>
+<button class="nav-btn" data-section="family">Family</button>
+<button class="nav-btn" data-section="contact">Contact</button>
+</div>
+
+</div>
+
+<div id="photoModal" class="modal">
+<img id="bigPhoto">
 </div>
 
 <script>
-// Tab switching
-document.querySelectorAll('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById(btn.dataset.tab).classList.add('active');
-  });
+const sections=document.querySelectorAll('.section');
+const buttons=document.querySelectorAll('.nav-btn');
+
+buttons.forEach(btn=>{
+btn.addEventListener('click',()=>{
+sections.forEach(s=>s.classList.remove('active'));
+buttons.forEach(b=>b.classList.remove('active'));
+document.getElementById(btn.dataset.section).classList.add('active');
+btn.classList.add('active');
+});
 });
 
-// Photo modal
-document.getElementById('profilePhoto').addEventListener('click', () => {
-  document.getElementById('modalImg').src = document.getElementById('profilePhoto').src;
-  document.getElementById('modal').style.display = 'flex';
+document.querySelectorAll('.copy-btn').forEach(btn=>{
+btn.addEventListener('click',()=>{
+navigator.clipboard.writeText(btn.dataset.clip);
+btn.innerText='Copied ✓';
+setTimeout(()=>btn.innerText='Copy number',2000);
+});
 });
 
-// Copy to clipboard
-document.querySelectorAll('.copy-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    navigator.clipboard.writeText(btn.dataset.phone).then(() => {
-      btn.classList.add('copied');
-      setTimeout(() => btn.classList.remove('copied'), 3200);
-    });
-  });
+document.getElementById('avatar').addEventListener('click',()=>{
+document.getElementById('bigPhoto').src=document.getElementById('avatar').src;
+document.getElementById('photoModal').style.display='flex';
+});
+
+document.getElementById('photoModal').addEventListener('click',()=>{
+document.getElementById('photoModal').style.display='none';
 });
 </script>
+
 </body>
 </html>
